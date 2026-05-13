@@ -1,3 +1,7 @@
 spring:
   application:
     name: clientcrud
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/clientdb

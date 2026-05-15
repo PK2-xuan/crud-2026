@@ -1,0 +1,22 @@
+====== NOTA ======
+Esto despues de tener el CRUD completo.
+
+// lo que recomendo GPT al inicio del proyecto
+@RestControllerAdvice
+excepciones personalizadas
+mapper
+paginación
+filtros
+Spring Security
+JWT
+Swagger/OpenAPI
+
+// nueva estructura de como continuar con el proyecto
+1. Exceptions
+2. RestControllerAdvice
+3. Mapper
+4. Pagination
+5. Filters
+6. Swagger
+7. Spring Security
+8. JWT

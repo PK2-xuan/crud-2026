@@ -2,6 +2,7 @@ package com.xuan.clientcrud.service.impl;
 
 import java.util.List;
 
+import com.xuan.clientcrud.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.xuan.clientcrud.document.Client;
@@ -25,7 +26,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public ClientResponseDto findById(String id) {
-        Client client = repository.findById(id).orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
+        Client client = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Cliente no encontrado"));
 
         return ClientResponseDto.builder().id(client.getId()).nombre(client.getNombre()).email(client.getEmail()).build();
     }
@@ -43,7 +44,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public ClientResponseDto update(String id, ClientRequestDto dto) {
-        Client client = repository.findById(id).orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
+        Client client = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Cliente no encontrado"));
 
         client.setNombre(dto.getNombre());
         client.setEmail(dto.getEmail());
@@ -55,7 +56,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public void delete(String id) {
-        Client client = repository.findById(id).orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
+        Client client = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Cliente no encontrado"));
 
         repository.delete(client);
 

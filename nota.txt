@@ -14,7 +14,10 @@ Swagger/OpenAPI
 // nueva estructura de como continuar con el proyecto
 1. Exceptions                ✓
 2. RestControllerAdvice      ✓
-3. Mapper
+3. Mapper                    ✓
+    3.1. Manual (actualmente)
+    3.2. MapStruct
+    3.3. ModelMapper
 4. Pagination
 5. Filters
 6. Swagger

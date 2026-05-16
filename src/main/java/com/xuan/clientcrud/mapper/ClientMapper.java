@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ClientMapper {
 
+    //que es mapper - "mapper solo evita conversiones repetidas"
     public Client toEntity(ClientRequestDto dto) {
         return Client.builder().nombre(dto.getNombre()).email(dto.getEmail()).build();
     }

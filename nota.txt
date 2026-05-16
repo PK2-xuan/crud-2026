@@ -12,8 +12,8 @@ JWT
 Swagger/OpenAPI
 
 // nueva estructura de como continuar con el proyecto
-1. Exceptions
-2. RestControllerAdvice
+1. Exceptions                ✓
+2. RestControllerAdvice      ✓
 3. Mapper
 4. Pagination
 5. Filters

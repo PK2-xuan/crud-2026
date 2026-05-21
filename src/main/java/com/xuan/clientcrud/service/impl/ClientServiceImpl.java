@@ -1,8 +1,10 @@
 package com.xuan.clientcrud.service.impl;
 
-import java.util.List;
 
 import com.xuan.clientcrud.exception.ResourceNotFoundException;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.xuan.clientcrud.document.Client;
@@ -14,6 +16,7 @@ import com.xuan.clientcrud.mapper.ClientMapper;
 
 import lombok.RequiredArgsConstructor;
 
+
 @Service
 @RequiredArgsConstructor
 public class ClientServiceImpl implements ClientService {
@@ -23,9 +26,9 @@ public class ClientServiceImpl implements ClientService {
     private final ClientMapper mapper;
 
     @Override
-    public List<ClientResponseDto> findAll() {
-        //return repository.findAll().stream().map(client -> ClientResponseDto.builder().id(client.getId()).nombre(client.getNombre()).email(client.getEmail()).build()).toList();
-        return repository.findAll().stream().map(mapper::toResponse).toList();
+    public Page<ClientResponseDto> findAll(Pageable pageable) {
+        return repository.findAll(pageable)
+                .map(mapper::toResponse);
     }
 
     @Override

@@ -20,6 +20,7 @@ Swagger/OpenAPI
     3.3. ModelMapper
 4. Pagination                ✓
 5. Filters                   ✓
-6. Swagger
+6. Swagger                   ✓
+    link-prueba: "http://localhost:8080/swagger-ui.html"
 7. Spring Security
 8. JWT

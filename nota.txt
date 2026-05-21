@@ -19,7 +19,7 @@ Swagger/OpenAPI
     3.2. MapStruct
     3.3. ModelMapper
 4. Pagination                ✓
-5. Filters
+5. Filters                   ✓
 6. Swagger
 7. Spring Security
 8. JWT

@@ -8,6 +8,8 @@ import com.xuan.clientcrud.dto.response.ClientResponseDto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
+
 public interface ClientService {
 
     //List<ClientResponseDto> findAll();
@@ -20,5 +22,8 @@ public interface ClientService {
     ClientResponseDto update(String id, ClientRequestDto dto);
 
     void delete(String id);
+
+    //filter
+    List<ClientResponseDto> findByNombre(String nombre);
 
 }

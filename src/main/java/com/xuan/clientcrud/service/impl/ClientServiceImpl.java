@@ -16,6 +16,8 @@ import com.xuan.clientcrud.mapper.ClientMapper;
 
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor
@@ -72,6 +74,14 @@ public class ClientServiceImpl implements ClientService {
 
         repository.delete(client);
 
+    }
+
+    @Override
+    public List<ClientResponseDto> findByNombre(String nombre) {
+        return repository.findByNombre(nombre)
+                .stream()
+                .map(mapper::toResponse)
+                .toList();
     }
 
 }

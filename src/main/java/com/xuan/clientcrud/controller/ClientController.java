@@ -13,6 +13,8 @@ import com.xuan.clientcrud.service.ClientService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/clients")
@@ -55,5 +57,10 @@ public class ClientController {
         service.delete(id);
 
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<ClientResponseDto>> findByNombre(@RequestParam String nombre) {
+        return ResponseEntity.ok(service.findByNombre(nombre));
     }
 }

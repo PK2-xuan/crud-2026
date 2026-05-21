@@ -4,6 +4,10 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.xuan.clientcrud.document.Client;
 
-public interface ClientRepository extends MongoRepository<Client, String>{
+import java.util.List;
 
+public interface ClientRepository extends MongoRepository<Client, String> {
+
+    // filter
+    List<Client> findByNombre(String nombre);
 }
